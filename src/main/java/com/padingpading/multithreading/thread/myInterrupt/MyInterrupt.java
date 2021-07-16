@@ -1,4 +1,4 @@
-package com.padingpading.multithreading.thread.MyInterrupt;
+package com.padingpading.multithreading.thread.myInterrupt;
 
 /**
  * @author libin

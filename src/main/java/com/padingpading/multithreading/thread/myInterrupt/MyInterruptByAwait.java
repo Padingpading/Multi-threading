@@ -1,8 +1,4 @@
-package com.padingpading.multithreading.thread.MyInterrupt;
-
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
-import java.sql.SQLOutput;
+package com.padingpading.multithreading.thread.myInterrupt;
 
 /**
  * @author libin

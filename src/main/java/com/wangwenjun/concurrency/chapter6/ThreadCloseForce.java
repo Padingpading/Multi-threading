@@ -8,7 +8,7 @@ package com.wangwenjun.concurrency.chapter6;
 public class ThreadCloseForce {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         ThreadService service = new ThreadService();
         long start = System.currentTimeMillis();

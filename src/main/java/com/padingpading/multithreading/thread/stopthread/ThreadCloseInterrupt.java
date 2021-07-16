@@ -1,11 +1,16 @@
-package com.wangwenjun.concurrency.chapter6;
+package com.padingpading.multithreading.thread.stopthread;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/19 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
-public class  ThreadService {
+/**
+ * @author libin
+ * @description 通过 interrupt强制关闭。
+ * 业务场景:执行一个任务,设置一个时间，如果超过这个时间还没有完成，关闭任务。
+ * 实现原理:开启两个线程
+ * 主线程:如果到了，还没有执行完，线程
+ * 守护线程:执行任务。主线程关闭，守护线程也会关闭。
+ *
+ * @date 2021-07-15
+ */
+public class ThreadCloseInterrupt {
 
     private Thread executeThread;
 
@@ -29,7 +34,6 @@ public class  ThreadService {
 
         executeThread.start();
     }
-
     public void shutdown(long mills) {
         long currentTime = System.currentTimeMillis();
         while (!finished) {
@@ -46,19 +50,7 @@ public class  ThreadService {
                 break;
             }
         }
-
         finished = false;
     }
-
-    public static void main(String[] args) throws InterruptedException {
-
-        Thread thread = new Thread(()->{
-            System.out.println("执行完毕");
-        });
-        thread.setDaemon(true);
-        thread.start();
-        Thread.sleep(10000);
-        System.out.println(thread.getState());
-
-    }
 }
+
